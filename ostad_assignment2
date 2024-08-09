@@ -1,0 +1,71 @@
+import 'package:flutter/material.dart';
+
+
+void main() {
+  runApp(Assignment2());
+}
+
+class Assignment2 extends StatelessWidget {
+  const Assignment2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Home(),
+      title: 'Ostad Assignment 2',
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.lightGreen,
+        title: Text(
+          "FAZLAY RABBY\n01304121757",
+          style: TextStyle(
+              color: Colors.black87, fontSize: 16, fontWeight: FontWeight.w700),
+        ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              """ Hello, World! """,
+              style: TextStyle(
+                  fontSize: 20, fontWeight: FontWeight.bold, color: Colors.red),
+            ),
+            SizedBox(height: 5),
+            Text(
+              """ Welcome to Flutter! """,
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black54),
+            ),
+            SizedBox(height: 5),
+            Image.asset('assets/flutter-cover.png', width: 200),
+            SizedBox(height: 5),
+            ElevatedButton(
+                onPressed: () {
+                  final value = SnackBar(
+                      content: Text(
+                    'pressed!',
+                    style: TextStyle(color: Colors.red),
+                  ));
+                  ScaffoldMessenger.of(context).showSnackBar(value);
+                },
+                child: Text('Press Me'),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.green))
+          ],
+        ),
+      ),
+    );
+  }
+}
